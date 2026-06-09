@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nombre": "Laptop Gamer",
+    "precio": "$1500",
+    "agotado": false
+  },
+  {
+    "id": 2,
+    "nombre": "Mouse Inalámbrico",
+    "precio": "$25",
+    "agotado": true
+  },
+  {
+    "id": 3,
+    "nombre": "Teclado Mecánico",
+    "precio": "$85",
+    "agotado": false
+  },
+  {
+    "id": 4,
+    "nombre": "Monitor 4K",
+    "precio": "$450",
+    "agotado": false
+  },
+  {
+    "id": 5,
+    "nombre": "Auriculares",
+    "precio": "$60",
+    "agotado": true
+  },
+  {
+    "id": 6,
+    "nombre": "Webcam HD",
+    "precio": "$90",
+    "agotado": false
+  }
+]
