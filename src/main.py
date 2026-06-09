@@ -9,8 +9,16 @@ def cargar_productos(nombre_archivo):
     
     ruta_completa = os.path.join(carpeta_actual, '..', 'data', nombre_archivo)
 
-    with open(ruta_completa, 'r', encoding='utf-8') as archivo:
-        return json.load(archivo)
+    try:
+        with open(ruta_completa, 'r', encoding='utf-8') as archivo:
+            return json.load(archivo)
+    except FileNotFoundError:
+        print(f"Error: El archivo '{nombre_archivo}' no se encontró en la ruta '{ruta_completa}'.")
+        return []
+    
+    except json.JSONDecodeError:
+        print(f"Error: El archivo '{nombre_archivo}' no contiene un JSON válido.")
+        return []
 
 
 """Función principal que carga los productos, limpia los precios, calcula el promedio y lo imprime"""
