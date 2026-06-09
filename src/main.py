@@ -3,8 +3,11 @@ import os
 from procesos import limpiar_precio, calcular_promedio, filtrar_disponibles, generar_reporte_csv
 
 
-"""Este script carga un archivo JSON con información de productos"""
+
 def cargar_productos(nombre_archivo):
+
+    """Este script carga un archivo JSON con información de productos con manejo de errores para casos comunes como archivo no encontrado o JSON inválido"""
+    
     carpeta_actual = os.path.dirname(os.path.abspath(__file__))
     
     ruta_completa = os.path.join(carpeta_actual, '..', 'data', nombre_archivo)
@@ -21,8 +24,11 @@ def cargar_productos(nombre_archivo):
         return []
 
 
-"""Función principal que carga los productos, limpia los precios, calcula el promedio y lo imprime"""
+
 def main():
+
+    """Función principal que carga los productos, filtra los disponibles, genera un reporte CSV y calcula estadísticas de precios"""
+
     productos = cargar_productos('productos.json')
     disponibles = filtrar_disponibles(productos)
     mensaje = generar_reporte_csv(disponibles, 'reporte_disponibles.csv')
